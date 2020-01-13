@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:layout_gravity="top"
-    android:gravity="top"
     tools:context=".model.SigUpActivity">
 
-
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+        >
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="400dp"
@@ -42,7 +43,7 @@
         android:gravity="center"
         android:hint="Last Name"
         android:inputType="textPersonName"
-      android:layout_marginBottom="10dp" />
+        android:layout_marginBottom="10dp" />
 
 
 
@@ -55,29 +56,32 @@
         android:hint="Email"
         android:inputType="textPersonName"
         android:layout_marginBottom="10dp"/>
-<LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:layout_gravity="bottom"
-    android:gravity="bottom"
-    android:orientation="horizontal">
-    <Button
-        android:id="@+id/signup"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Sign Up"
-        android:layout_gravity="top"
-        android:gravity="top"
-  android:layout_marginRight="160dp" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="bottom"
+        android:gravity="bottom"
+        android:orientation="horizontal">
+        <Button
+            android:id="@+id/signup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sign Up"
+            android:layout_gravity="top"
+            android:gravity="top"
+            android:layout_marginRight="160dp" />
 
-    <Button
-        android:id="@+id/login"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="top"
-        android:gravity="top"
-        android:text="Already user login"
-     />
+        <Button
+            android:id="@+id/login"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="clip_horizontal"
+            android:gravity="center"
+            android:text="Already user login"
+            />
 </LinearLayout>
 
+
 </LinearLayout>
+
+</androidx.core.widget.NestedScrollView>
