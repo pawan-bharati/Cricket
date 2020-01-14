@@ -11,14 +11,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
         >
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="400dp"
-        android:layout_height="120dp"
-        android:layout_gravity="center"
-        android:foregroundGravity="center"
-        android:padding="20dp"
-        app:srcCompat="@drawable/cricketlogo" />
+
 
 
 
@@ -44,6 +37,34 @@
         android:hint="Last Name"
         android:inputType="textPersonName"
         android:layout_marginBottom="10dp" />
+    <EditText
+        android:id="@+id/etphone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:hint="Phone NO"
+        android:inputType="textPersonName"
+        android:layout_marginBottom="10dp" />
+    <EditText
+        android:id="@+id/etusername"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:hint="Username"
+        android:inputType="textPersonName"
+        android:layout_marginBottom="10dp" />
+    <EditText
+        android:id="@+id/etpassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:hint="Password"
+        android:inputType="textPersonName"
+        android:layout_marginBottom="10dp" />
+
 
 
 
@@ -69,7 +90,7 @@
             android:text="Sign Up"
             android:layout_gravity="top"
             android:gravity="top"
-            android:layout_marginRight="160dp" />
+            android:layout_marginRight="150dp" />
 
         <Button
             android:id="@+id/login"
