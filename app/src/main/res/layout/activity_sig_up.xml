@@ -12,9 +12,6 @@
     android:orientation="vertical"
         >
 
-
-
-
     <EditText
         android:id="@+id/etfirstname"
         android:layout_width="match_parent"
