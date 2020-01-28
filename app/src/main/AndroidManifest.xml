@@ -9,9 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".model.SigUpActivity">
-
-        </activity>
+        <activity
+            android:name=".Landind_Activity"
+            android:label="@string/title_activity_landind_"></activity>
         <activity android:name=".Dashboard" />
         <activity android:name=".MainActivity">
             <intent-filter>
