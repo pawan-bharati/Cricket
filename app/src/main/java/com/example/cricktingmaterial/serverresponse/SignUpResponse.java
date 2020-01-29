@@ -3,8 +3,7 @@ package com.example.cricktingmaterial.serverresponse;
 public class SignUpResponse {
     //for getting server response
 
-    private String status;
-    private String token;
+
 
     public String getStatus() {
         return status;
