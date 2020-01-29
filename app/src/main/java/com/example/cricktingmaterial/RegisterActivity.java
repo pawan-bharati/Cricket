@@ -1,7 +1,5 @@
 package com.example.cricktingmaterial;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -9,6 +7,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.cricktingmaterial.api.UsersAPI;
 import com.example.cricktingmaterial.model.UsersCUD;
@@ -65,7 +65,7 @@ public class RegisterActivity extends AppCompatActivity {
         String phone = etPhone.getText().toString();
         String email = etEmail.getText().toString();
         String password = etPassword.getText().toString();
-      //  String security=etSecurityQuestion.getText().toString();
+        //  String security=etSecurityQuestion.getText().toString();
 
         UsersCUD employee = new UsersCUD(fname, lname, address, phone, email, password);
 
