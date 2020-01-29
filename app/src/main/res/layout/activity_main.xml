@@ -91,12 +91,13 @@
         app:layout_constraintVertical_bias="0.058" />
 
     <TextView
-        android:id="@+id/Signup"
+        android:id="@+id/tvSignUp"
         android:layout_width="86dp"
         android:layout_height="25dp"
         android:layout_marginStart="76dp"
         android:layout_marginTop="24dp"
         android:text="SignUP here"
+        android:clickable="true"
         android:textColor="#ffffff"
         android:textSize="20dp"
         app:layout_constraintBottom_toBottomOf="parent"

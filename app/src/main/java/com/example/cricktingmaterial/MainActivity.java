@@ -7,11 +7,13 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 EditText etusername,etpassword;
 Button btnlogin;
+TextView tvLoginLink;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -20,6 +22,15 @@ Button btnlogin;
         etusername=findViewById(R.id.etusername);
         etpassword=findViewById(R.id.etpassword);
         btnlogin=findViewById(R.id.btnlogin);
+        tvLoginLink=findViewById(R.id.tvSignUp);
+
+        tvLoginLink.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent =new Intent(MainActivity.this,RegisterActivity.class);
+                startActivity(intent);
+            }
+        });
 
 
         btnlogin.setOnClickListener(new View.OnClickListener() {
