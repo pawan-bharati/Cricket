@@ -13,14 +13,16 @@
         android:supportsRtl="true"
         android:usesCleartextTraffic="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".RegisterActivity" />
-
-        <activity android:name=".Landind_Activity" >
+        <activity android:name=".RegisterActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+
+        <activity android:name=".Landind_Activity" >
+
         </activity>
         <activity android:name=".SplashScreen_Activity">
         </activity>

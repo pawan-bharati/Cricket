@@ -25,7 +25,7 @@ TextView tvLoginLink;
         etusername=findViewById(R.id.etusername);
         etpassword=findViewById(R.id.etpassword);
         btnlogin=findViewById(R.id.btnlogin);
-        tvLoginLink=findViewById(R.id.tvSignUp);
+        tvLoginLink=findViewById(R.id.tvLoginLink);
 
         tvLoginLink.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -62,3 +62,9 @@ TextView tvLoginLink;
         }
     }
 }
+
+
+
+
+
+
