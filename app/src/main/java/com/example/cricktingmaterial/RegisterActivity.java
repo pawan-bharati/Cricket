@@ -25,6 +25,7 @@ public class RegisterActivity extends AppCompatActivity {
     Button btnRegister;
     TextView tvLoginNow;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,6 +39,7 @@ public class RegisterActivity extends AppCompatActivity {
         etPassword=findViewById(R.id.etpassword);
         btnRegister=findViewById(R.id.btnRegister);
         tvLoginNow=findViewById(R.id.tvLoginNow);
+
 
         btnRegister.setOnClickListener(new View.OnClickListener() {
             @Override
