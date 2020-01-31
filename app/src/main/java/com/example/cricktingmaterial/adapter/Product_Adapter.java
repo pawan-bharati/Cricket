@@ -1,6 +1,7 @@
 package com.example.cricktingmaterial.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,8 +11,11 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.cricktingmaterial.ProductDetail_Activity;
 import com.example.cricktingmaterial.R;
 import com.example.cricktingmaterial.model.Products;
+import com.example.cricktingmaterial.url.Url;
+import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
@@ -34,9 +38,29 @@ public class Product_Adapter extends RecyclerView.Adapter<Product_Adapter.produc
 
     @Override
     public void onBindViewHolder(@NonNull productholder holder, int position) {
-        Products products = productsList.get(position);
+        final Products products = productsList.get(position);
         holder.tvPrice.setText(products.getPrice());
         holder.tvProductName.setText(products.getName());
+        String imgPath = Url.imagepath + products.getImage();
+        Picasso.get()
+                .load(imgPath)
+                .placeholder(R.drawable.cricketlogo)
+                .resize(220,220)
+                .centerCrop()
+                .into(holder.productImage);
+
+        holder.productImage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(context, ProductDetail_Activity.class);
+                intent.putExtra("image",products.getImage());
+                intent.putExtra("name",products.getName());
+                intent.putExtra("description",products.getDescription());
+
+                context.startActivity(intent);
+            }
+        });
+
     }
 
     @Override
