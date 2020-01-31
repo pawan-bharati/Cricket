@@ -36,7 +36,7 @@ public class RegisterActivity extends AppCompatActivity {
         etEmail=findViewById(R.id.etEmail);
         etAddress=findViewById(R.id.etAddress);
         etPhone=findViewById(R.id.etPhone);
-        etPassword=findViewById(R.id.etpassword);
+        etPassword=findViewById(R.id.etPassword);
         btnRegister=findViewById(R.id.btnRegister);
         tvLoginNow=findViewById(R.id.tvLoginNow);
 
@@ -64,12 +64,12 @@ public class RegisterActivity extends AppCompatActivity {
         String fname = etFirstName.getText().toString();
         String lname = etLastName.getText().toString();
         String address = etAddress.getText().toString();
-        String phone = etPhone.getText().toString();
+        String number = etPhone.getText().toString();
         String email = etEmail.getText().toString();
         String password = etPassword.getText().toString();
         //  String security=etSecurityQuestion.getText().toString();
 
-        UsersCUD employee = new UsersCUD(fname, lname, address, phone, email, password);
+        UsersCUD employee = new UsersCUD(fname, lname, address, number, email, password);
 
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(Url.base_url)

@@ -14,20 +14,20 @@ import com.example.cricktingmaterial.loginhandler.LoginHandler;
 import com.example.cricktingmaterial.strictmode.StrictModeClass;
 
 public class MainActivity extends AppCompatActivity {
-EditText etusername,etpassword;
+EditText etusername,etloginpassword;
 Button btnlogin;
-TextView tvLoginLink;
+TextView tvRegisterLink;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
         etusername=findViewById(R.id.etusername);
-        etpassword=findViewById(R.id.etpassword);
+        etloginpassword=findViewById(R.id.etloginpassword);
         btnlogin=findViewById(R.id.btnlogin);
-        tvLoginLink=findViewById(R.id.tvLoginLink);
+        tvRegisterLink=findViewById(R.id.tvRegisterLink);
 
-        tvLoginLink.setOnClickListener(new View.OnClickListener() {
+        tvRegisterLink.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent =new Intent(MainActivity.this,RegisterActivity.class);
@@ -47,7 +47,7 @@ TextView tvLoginLink;
     }
     private void login() {
         String email=etusername.getText().toString();
-        String password=etpassword.getText().toString();
+        String password=etloginpassword.getText().toString();
 
         LoginHandler loginHandler=new LoginHandler();
 
