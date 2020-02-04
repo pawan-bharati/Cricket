@@ -14,7 +14,9 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
         <activity android:name=".ProductDetail_Activity"></activity>
-        <activity android:name=".RegisterActivity"></activity>
+        <activity android:name=".RegisterActivity">
+
+        </activity>
         <activity android:name=".Landind_Activity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
