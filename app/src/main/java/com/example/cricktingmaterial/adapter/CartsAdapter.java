@@ -9,9 +9,9 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.spareworld.R;
-import com.example.spareworld.models.Cart;
-import com.example.spareworld.models.Notification;
+import com.example.cricktingmaterial.R;
+import com.example.cricktingmaterial.models.Cart;
+import com.example.cricktingmaterial.models.Notification;
 
 import java.util.List;
 
