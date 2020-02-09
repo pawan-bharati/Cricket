@@ -5,8 +5,8 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class Url {
 
-    public static final String base_url="http://10.0.2.2:4000/";
-    public static  String imagepath = base_url +"uploads/" ;
+    public static  String base_url="http://10.0.2.2:4000/";
+    public static  String imagepath = base_url + "uploads/";
     public static String token="Bearer ";
 
     public static Retrofit getInstance()

@@ -42,7 +42,7 @@ public class Product_Adapter extends RecyclerView.Adapter<Product_Adapter.produc
         final Products products = productsList.get(position);
         holder.tvPrice.setText(products.getPrice());
         holder.tvProductName.setText(products.getName());
-        String imgPath = Url.imagepath + products.getImage();
+        String imgPath = Url.imagepath+products.getImage();
 
         Toast.makeText(context, ""+imgPath, Toast.LENGTH_SHORT).show();
         Picasso.get()
