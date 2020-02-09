@@ -1,4 +1,4 @@
-package com.example.spareworld.models;
+package com.example.cricktingmaterial.model;
 
 public class Order {
 

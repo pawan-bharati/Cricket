@@ -1,5 +1,7 @@
 package com.example.cricktingmaterial.api;
 
+import com.example.cricktingmaterial.model.Cart;
+import com.example.cricktingmaterial.model.Order;
 import com.example.cricktingmaterial.model.Users;
 import com.example.cricktingmaterial.model.UsersCUD;
 import com.example.cricktingmaterial.serverresponse.SignUpResponse;
@@ -26,6 +28,13 @@ public interface UsersAPI {
 
     @GET("register/me")
     Call<Users>getUserDetails(@Header("Authorization") String token);
+
+    @POST("order/addorder")
+    Call<Void> orderthing(@Body Order order);
+
+
+    @POST("cart/addcart")
+    Call<Void> addcart(@Body Cart cart);
 
 
 }

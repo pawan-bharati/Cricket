@@ -1,11 +1,13 @@
 package com.example.cricktingmaterial;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 import android.widget.Toolbar;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -17,7 +19,7 @@ import com.squareup.picasso.Picasso;
 public class ProductDetail_Activity extends AppCompatActivity {
     ImageView dimgview;
     TextView tvdname, tvdprice, tvddesc, tvspecification;
-    Button buyyy;
+    Button buy;
     Context mcontext;
     Button buttonCart;
     @Override
@@ -31,7 +33,7 @@ public class ProductDetail_Activity extends AppCompatActivity {
         tvdprice = findViewById(R.id.tvdprice);
         tvdname = findViewById(R.id.tvdname);
         tvspecification = findViewById(R.id.tvspecification);
-        buyyy = findViewById(R.id.buyyy);
+        buy = findViewById(R.id.buy);
         buttonCart = findViewById(R.id.cartnow);
         Bundle bundle = getIntent().getExtras();
         if (bundle != null) {
@@ -48,7 +50,20 @@ public class ProductDetail_Activity extends AppCompatActivity {
             tvdprice.setText("Rs: " + bundle.getString("price"));
             tvddesc.setText(bundle.getString("description"));
             tvspecification.setText(bundle.getString("specification"));
+buy.setOnClickListener(new View.OnClickListener() {
+    @Override
+    public void onClick(View v) {
+        mcontext = getApplicationContext();
+        Bundle bundle = getIntent().getExtras();
 
+        Toast.makeText(ProductDetail_Activity.this, "" + bundle.getString("_id"), Toast.LENGTH_SHORT).show();
+        Intent intent = new Intent(ProductDetail_Activity.this, ConfirmOrderActivity.class);
+        intent.putExtra("_id", bundle.getString("_id"));
+        intent.putExtra("name", bundle.getString("name"));
+        intent.putExtra("price", bundle.getString("price"));
+        ProductDetail_Activity.this.startActivity(intent);
+    }
+});
         }
     }
 

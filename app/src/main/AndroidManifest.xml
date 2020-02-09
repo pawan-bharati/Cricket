@@ -13,7 +13,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".MyDetailActivity"></activity>
+        <activity android:name=".ConfirmOrderActivity"></activity>
+        <activity android:name=".MyDetailActivity" />
         <activity android:name=".ProductDetail_Activity" />
         <activity android:name=".RegisterActivity">
             <intent-filter>
@@ -22,7 +23,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Landind_Activity"></activity>
+        <activity android:name=".Landind_Activity" />
         <activity android:name=".SplashScreen_Activity" />
         <activity android:name=".Dashboard" />
         <activity android:name=".MainActivity" />
