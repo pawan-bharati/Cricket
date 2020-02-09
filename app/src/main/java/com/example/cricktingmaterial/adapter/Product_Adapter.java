@@ -44,7 +44,7 @@ public class Product_Adapter extends RecyclerView.Adapter<Product_Adapter.produc
         String imgPath = Url.imagepath + products.getImage();
         Picasso.get()
                 .load(imgPath)
-                .placeholder(R.drawable.cricketlogo)
+                .placeholder(R.drawable.ic_home_black_24dp)
                 .resize(220,220)
                 .centerCrop()
                 .into(holder.productImage);
