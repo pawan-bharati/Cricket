@@ -2,6 +2,24 @@ package com.example.cricktingmaterial.model;
 
 public class Users {
 
+
+    public String get_id() {
+        return _id;
+    }
+
+    public void set_id(String _id) {
+        this._id = _id;
+    }
+
+    public String getNumber() {
+        return number;
+    }
+
+    public void setNumber(String number) {
+        this.number = number;
+    }
+
+    private String _id;
     private String fname;
     private String lname;
     private String address;
@@ -66,15 +84,13 @@ public class Users {
         this.password = password;
     }
 
-    public Users(String fname, String lname, String address, String number, String email, String password,String security) {
+    public Users(String _id, String fname, String lname, String address, String number, String email, String password) {
+        this._id = _id;
         this.fname = fname;
         this.lname = lname;
         this.address = address;
         this.number = number;
         this.email = email;
         this.password = password;
-        //this.security=security;
     }
-
-
 }
