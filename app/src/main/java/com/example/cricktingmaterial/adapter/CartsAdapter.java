@@ -10,8 +10,8 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.cricktingmaterial.R;
-import com.example.cricktingmaterial.models.Cart;
-import com.example.cricktingmaterial.models.Notification;
+import com.example.cricktingmaterial.model.Cart;
+import com.example.cricktingmaterial.model.Notification;
 
 import java.util.List;
 

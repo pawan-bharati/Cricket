@@ -16,8 +16,8 @@ import android.widget.Toast;
 import com.example.cricktingmaterial.adapter.CartsAdapter;
 import com.example.cricktingmaterial.adapter.Product_Adapter;
 import com.example.cricktingmaterial.api.Products_Api;
-import com.example.cricktingmaterial.models.Cart;
-import com.example.cricktingmaterial.models.Products;
+import com.example.cricktingmaterial.model.Cart;
+import com.example.cricktingmaterial.model.Products;
 import com.example.cricktingmaterial.url.Url;
 
 import java.util.List;
@@ -73,8 +73,8 @@ public class CartActivity extends AppCompatActivity {
 
     public void getProduct() {
         String userid=id;
-        ProductsAPI retrofitProductAPI = Url.getInstance().create(ProductsAPI.class);
-        Call<List<Cart>> ProductsCall = retrofitProductAPI.getcart(userid);
+        Products_Api retrofitProducts_Api = Url.getInstance().create(Products_Api.class);
+        Call<List<Cart>> ProductsCall = retrofitProducts_Api.getcart(userid);
         ProductsCall.enqueue(new Callback<List<Cart>>() {
             @Override
             public void onResponse(Call<List<Cart>> call, Response<List<Cart>> response) {
