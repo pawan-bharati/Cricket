@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -42,9 +43,11 @@ public class Product_Adapter extends RecyclerView.Adapter<Product_Adapter.produc
         holder.tvPrice.setText(products.getPrice());
         holder.tvProductName.setText(products.getName());
         String imgPath = Url.imagepath + products.getImage();
+
+        Toast.makeText(context, ""+imgPath, Toast.LENGTH_SHORT).show();
         Picasso.get()
                 .load(imgPath)
-                .placeholder(R.drawable.ic_home_black_24dp)
+                .placeholder(R.drawable.cricketlogo)
                 .resize(220,220)
                 .centerCrop()
                 .into(holder.productImage);
