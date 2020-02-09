@@ -13,12 +13,12 @@ import android.hardware.SensorManager;
 import android.os.Bundle;
 import android.widget.Toast;
 
-import com.example.spareworld.adapter.CartsAdapter;
-import com.example.spareworld.adapter.ProductsAdapter;
-import com.example.spareworld.api.ProductsAPI;
-import com.example.spareworld.models.Cart;
-import com.example.spareworld.models.Products;
-import com.example.spareworld.url.Url;
+import com.example.cricktingmaterial.adapter.CartsAdapter;
+import com.example.cricktingmaterial.adapter.Product_Adapter;
+import com.example.cricktingmaterial.api.Products_Api;
+import com.example.cricktingmaterial.models.Cart;
+import com.example.cricktingmaterial.models.Products;
+import com.example.cricktingmaterial.url.Url;
 
 import java.util.List;
 
