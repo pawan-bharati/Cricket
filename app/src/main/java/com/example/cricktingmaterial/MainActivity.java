@@ -55,6 +55,9 @@ TextView tvRegisterLink;
 
         if (loginHandler.checkUser(email,password)){
             Toast.makeText(this, "Login Success", Toast.LENGTH_SHORT).show();
+
+            Intent intent =new Intent(MainActivity.this,Landind_Activity.class);
+            startActivity(intent);
         }
         else {
             Toast.makeText(this, "Either email or password is incorrect", Toast.LENGTH_SHORT).show();
