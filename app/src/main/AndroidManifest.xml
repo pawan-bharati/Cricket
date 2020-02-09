@@ -15,15 +15,15 @@
         android:usesCleartextTraffic="true">
         <activity android:name=".ProductDetail_Activity"></activity>
         <activity android:name=".RegisterActivity">
-
-
-        </activity>
-        <activity android:name=".Landind_Activity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
+        </activity>
+        <activity android:name=".Landind_Activity">
+
      </activity>
         <activity android:name=".SplashScreen_Activity"></activity>
         <activity android:name=".Dashboard" />
