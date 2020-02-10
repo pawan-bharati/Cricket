@@ -164,6 +164,11 @@
                             android:layout_weight="1"
                             android:textSize="16dp"/>
 
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="proxi"
+                            android:id="@+id/tvProximity"/>
 
                     </LinearLayout>
 
@@ -179,6 +184,8 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="20dp"
                         android:orientation="horizontal">
+
+
 
                         <Button
                             android:layout_width="wrap_content"
@@ -199,6 +206,7 @@
                             android:layout_marginLeft="5dp"
                             android:id="@+id/cartnow"
                             android:text="Add to Cart"/>
+
 
                     </LinearLayout>
 
