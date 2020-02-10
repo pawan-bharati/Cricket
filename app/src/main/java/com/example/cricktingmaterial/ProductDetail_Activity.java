@@ -1,5 +1,8 @@
 package com.example.cricktingmaterial;
 
+import android.app.AlarmManager;
+import android.app.Notification;
+import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
 import android.hardware.Sensor;
@@ -7,6 +10,7 @@ import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 import android.os.Bundle;
+import android.os.SystemClock;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -14,6 +18,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.NotificationCompat;
 
 import com.example.cricktingmaterial.api.UsersAPI;
 import com.example.cricktingmaterial.loginhandler.CartHandler;
@@ -33,6 +38,8 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class ProductDetail_Activity extends AppCompatActivity {
     ImageView dimgview;
     TextView tvdname, tvdprice, tvddesc, tvspecification,tvProximity;
+    public static final String NOTIFICATION_CHANNEL_ID = "10001";
+    private final static String default_notification_channel_id = "default";
     Button buy;
     Context mcontext;
     Button buttonCart;
@@ -95,11 +102,13 @@ buy.setOnClickListener(new View.OnClickListener() {
                     Register();
                     Snackbar.make(view, "Added to Cart", Snackbar.LENGTH_LONG)
                             .setAction("Action", null).show();
+                    scheduleNotification(getNotification("Buy now the product added in the cart box here ..."), 5000);
 
                 } else {
                     fab.setEnabled(false);
                     Snackbar.make(view, "Already Added! Check cart", Snackbar.LENGTH_LONG)
                             .setAction("Action", null).show();
+                    scheduleNotification(getNotification("You have already added  ..."), 5000);
 
                 }
             }
@@ -115,11 +124,12 @@ buy.setOnClickListener(new View.OnClickListener() {
                     Register();
                     Snackbar.make(view, "Added to Cart", Snackbar.LENGTH_LONG)
                             .setAction("Action", null).show();
-
+                    scheduleNotification(getNotification("Buy now the product added in the cart box here ..."), 5000);
                 } else {
                     fab.setEnabled(false);
                     Snackbar.make(view, "Already Added! Check cart", Snackbar.LENGTH_LONG)
                             .setAction("Action", null).show();
+                    scheduleNotification(getNotification("You have already added  ..."), 5000);
                 }
             }
         });
@@ -173,6 +183,26 @@ buy.setOnClickListener(new View.OnClickListener() {
             }
         };
         sensorManager.registerListener(proxilistener, sensor, SensorManager.SENSOR_DELAY_NORMAL);
+    }
+
+    private void scheduleNotification(Notification notification, int delay) {
+        Intent notificationIntent = new Intent(this, MyNotificationPublisher.class);
+        notificationIntent.putExtra(MyNotificationPublisher.NOTIFICATION_ID, 1);
+        notificationIntent.putExtra(MyNotificationPublisher.NOTIFICATION, notification);
+        PendingIntent pendingIntent = PendingIntent.getBroadcast(this, 0, notificationIntent, PendingIntent.FLAG_UPDATE_CURRENT);
+        long futureInMillis = SystemClock.elapsedRealtime() + delay;
+        AlarmManager alarmManager = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
+        assert alarmManager != null;
+        alarmManager.set(AlarmManager.ELAPSED_REALTIME_WAKEUP, futureInMillis, pendingIntent);
+    }
+    private Notification getNotification(String content) {
+        NotificationCompat.Builder builder = new NotificationCompat.Builder(this, default_notification_channel_id);
+        builder.setContentTitle("Check out Cart");
+        builder.setContentText(content);
+        builder.setSmallIcon(R.drawable.cricketlogo);
+        builder.setAutoCancel(true);
+        builder.setChannelId(NOTIFICATION_CHANNEL_ID);
+        return builder.build();
     }
 
 

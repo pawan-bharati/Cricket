@@ -27,22 +27,31 @@
 
             <EditText
                 android:id="@+id/etFirstName"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 android:layout_marginRight="50dp"
                 android:layout_marginLeft="50dp"
                 android:ems="20"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:lines="1"
+                android:scrollHorizontally="true"
+                android:ellipsize="end"
+                android:layout_weight="1"
                 android:hint="First Name"
                 android:gravity="center"
                 android:textColorHint="@color/colorWhite" />
 
             <EditText
                 android:id="@+id/etLastName"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:lines="1"
+                android:scrollHorizontally="true"
+                android:ellipsize="end"
+                android:layout_weight="1"
                 android:layout_marginRight="50dp"
                 android:layout_marginLeft="50dp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+
                 android:gravity="center"
                 android:ems="20"
                 android:hint="Last Name"
@@ -50,11 +59,16 @@
 
             <EditText
                 android:gravity="center"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:lines="1"
+                android:scrollHorizontally="true"
+                android:ellipsize="end"
+                android:layout_weight="1"
                 android:id="@+id/etAddress"
                 android:layout_marginRight="50dp"
                 android:layout_marginLeft="50dp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+
                 android:ems="20"
                 android:hint="Address"
                 android:textColorHint="@color/colorWhite"
@@ -62,21 +76,30 @@
 
             <EditText
                 android:id="@+id/etEmail"
-                android:gravity="center"
-                android:layout_width="match_parent"
+                android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
+                android:lines="1"
+                android:scrollHorizontally="true"
+                android:ellipsize="end"
+                android:layout_weight="1"
+                android:gravity="center"
                 android:ems="20"
                 android:textColorHint="@color/colorWhite"
 
                 android:hint="Email" />
 
             <EditText
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:lines="1"
+                android:scrollHorizontally="true"
+                android:ellipsize="end"
+                android:layout_weight="1"
                 android:gravity="center"
                 android:id="@+id/etPhone"
                 android:layout_marginRight="50dp"
                 android:layout_marginLeft="50dp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+
                 android:ems="20"
                 android:hint="Phone"
                 android:textColorHint="@color/colorWhite"
@@ -84,11 +107,15 @@
 
             <EditText
                 android:gravity="center"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:lines="1"
+                android:scrollHorizontally="true"
+                android:ellipsize="end"
+                android:layout_weight="1"
                 android:id="@+id/etPassword"
                 android:layout_marginRight="50dp"
                 android:layout_marginLeft="50dp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
                 android:textColorHint="@color/colorWhite"
 
                 android:ems="20"
