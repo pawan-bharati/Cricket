@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    app:layout_behavior="@string/appbar_scrolling_view_behavior"
     android:background="#A91B23"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:showIn="@layout/activity_productdetail">
 
     <androidx.core.widget.NestedScrollView
@@ -21,8 +21,8 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:padding="15dp"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:padding="15dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -35,18 +35,18 @@
                         android:layout_height="wrap_content"
                         android:text="Rs. 1200"
                         android:textColor="@color/colorPrimary"
-                        android:textStyle="bold"
-                        android:textSize="20dp"/>
+                        android:textSize="20dp"
+                        android:textStyle="bold" />
 
                     <TextView
                         android:id="@+id/tvdname"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Maroon Knitted Woolen Long Sweater For Women"
                         android:layout_marginTop="8dp"
                         android:layout_marginBottom="10dp"
+                        android:text="Maroon Knitted Woolen Long Sweater For Women"
                         android:textSize="14dp"
-                        android:textStyle="bold"/>
+                        android:textStyle="bold" />
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -55,18 +55,18 @@
 
                         <RatingBar
                             android:id="@+id/rating"
+                            style="?android:attr/ratingBarStyleSmall"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:saveEnabled="true"
-                            style="?android:attr/ratingBarStyleSmall"
-                            android:numStars="5"/>
+                            android:numStars="5"
+                            android:saveEnabled="true" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="4.5"
                             android:paddingLeft="15dp"
-                            android:textSize="14dp"/>
+                            android:text="4.5"
+                            android:textSize="14dp" />
 
                     </LinearLayout>
 
@@ -87,18 +87,18 @@
                             android:layout_width="120dp"
                             android:layout_height="wrap_content"
                             android:text="Specifications"
+                            android:textColor="#818080"
                             android:textSize="16dp"
-                            android:textStyle="bold"
-                            android:textColor="#818080"/>
+                            android:textStyle="bold" />
 
                         <TextView
                             android:id="@+id/tvspecification"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Brand, Box Content, SKU"
-                            android:paddingLeft="20dp"
                             android:layout_weight="1"
-                            android:textSize="14dp"/>
+                            android:paddingLeft="20dp"
+                            android:text="Brand, Box Content, SKU"
+                            android:textSize="14dp" />
 
                     </LinearLayout>
 
@@ -107,8 +107,8 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:layout_marginTop="20dp">
+                    android:layout_marginTop="20dp"
+                    android:orientation="vertical">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -119,19 +119,19 @@
                             android:layout_width="120dp"
                             android:layout_height="wrap_content"
                             android:text="Delivery"
-                            android:textSize="16dp"
-                            android:textColor="#818080"/>
+                            android:textColor="#818080"
+                            android:textSize="16dp" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Bagmati, Kathmandu Outside RingRoad"
+                            android:layout_weight="1"
                             android:maxLines="1"
                             android:paddingLeft="20dp"
-                            android:textStyle="bold"
-                            android:layout_weight="1"
+                            android:text="Bagmati, Kathmandu Outside RingRoad"
                             android:textColor="@color/colorPrimary"
-                            android:textSize="14dp"/>
+                            android:textSize="14dp"
+                            android:textStyle="bold" />
 
                     </LinearLayout>
 
@@ -140,8 +140,8 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:layout_marginTop="20dp">
+                    android:layout_marginTop="20dp"
+                    android:orientation="vertical">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -152,24 +152,24 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="Product Detials"
+                            android:textColor="#818080"
                             android:textSize="16dp"
-                            android:textStyle="bold"
-                            android:textColor="#818080"/>
+                            android:textStyle="bold" />
 
                         <TextView
                             android:id="@+id/tvddesc"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Brand: No Brand"
-                            android:paddingTop="12dp"
                             android:layout_weight="1"
-                            android:textSize="16dp"/>
+                            android:paddingTop="12dp"
+                            android:text="Brand: No Brand"
+                            android:textSize="16dp" />
 
                         <TextView
+                            android:id="@+id/tvProximity"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:hint="proxi"
-                            android:id="@+id/tvProximity"/>
+                            android:hint="proxi" />
 
                     </LinearLayout>
 
@@ -187,26 +187,25 @@
                         android:orientation="horizontal">
 
 
-
                         <Button
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
                             android:id="@+id/buy"
-                            android:background="@drawable/buy_now_btn"
-                            android:textColor="@color/white"
-                            android:layout_marginRight="5dp"
-                            android:text="Buy Now"/>
-
-                        <Button
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:layout_marginRight="5dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/buy_now_btn"
+                            android:text="Buy Now"
+                            android:textColor="@color/white" />
+
+                        <Button
+                            android:id="@+id/cartnow"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
                             android:layout_weight="1"
                             android:background="@drawable/add_cart_btn"
-                            android:textColor="@color/white"
-                            android:layout_marginLeft="5dp"
-                            android:id="@+id/cartnow"
-                            android:text="Add to Cart"/>
+                            android:text="Add to Cart"
+                            android:textColor="@color/white" />
 
 
                     </LinearLayout>
@@ -215,8 +214,11 @@
 
             </LinearLayout>
 
+
         </RelativeLayout>
 
+
     </androidx.core.widget.NestedScrollView>
+
 
 </androidx.core.widget.NestedScrollView>

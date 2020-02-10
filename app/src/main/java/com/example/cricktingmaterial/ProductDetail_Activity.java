@@ -105,31 +105,11 @@ buy.setOnClickListener(new View.OnClickListener() {
                     scheduleNotification(getNotification("Buy now the product added in the cart box here ..."), 5000);
 
                 } else {
-                    fab.setEnabled(false);
+
                     Snackbar.make(view, "Already Added! Check cart", Snackbar.LENGTH_LONG)
                             .setAction("Action", null).show();
                     scheduleNotification(getNotification("You have already added  ..."), 5000);
 
-                }
-            }
-        });
-        fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                String _userid = id;
-                String _productid = product_id;
-                CartHandler cartBll = new CartHandler();
-                if (cartBll.checkcart(_userid, _productid)) {
-                    Register();
-                    Snackbar.make(view, "Added to Cart", Snackbar.LENGTH_LONG)
-                            .setAction("Action", null).show();
-                    scheduleNotification(getNotification("Buy now the product added in the cart box here ..."), 5000);
-                } else {
-                    fab.setEnabled(false);
-                    Snackbar.make(view, "Already Added! Check cart", Snackbar.LENGTH_LONG)
-                            .setAction("Action", null).show();
-                    scheduleNotification(getNotification("You have already added  ..."), 5000);
                 }
             }
         });
