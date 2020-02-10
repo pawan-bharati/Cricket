@@ -1,4 +1,4 @@
-package com.example.spareworld.serverreponse;
+package com.example.cricktingmaterial.serverresponse;
 
 public class CartResponse {
     private String status;
