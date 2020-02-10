@@ -152,6 +152,8 @@ buy.setOnClickListener(new View.OnClickListener() {
             public void onSensorChanged(SensorEvent event) {
                 if (event.values[0] <= 4) {
                     tvProximity.setText("Object is near");
+                    Intent intent = new Intent(ProductDetail_Activity.this,Landind_Activity.class);
+                    startActivity(intent);
                 } else {
                     tvProximity.setText("Object is far");
                 }

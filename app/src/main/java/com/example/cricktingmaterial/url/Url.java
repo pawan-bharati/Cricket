@@ -5,7 +5,9 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class Url {
 
-    public static  String base_url="http://10.0.2.2:4000/";
+   // public static  String base_url="http://10.0.2.2:4000/";
+    public static  String base_url="http://192.168.1.105:4000/";
+
     public static  String imagepath = base_url + "uploads/";
     public static String token="Bearer ";
 

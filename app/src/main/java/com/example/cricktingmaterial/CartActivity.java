@@ -38,34 +38,6 @@ public class CartActivity extends AppCompatActivity {
        getProduct();
 
 
-        SensorManager sensorManager = (SensorManager) getSystemService(SENSOR_SERVICE);
-        Sensor sensor = sensorManager.getDefaultSensor(Sensor.TYPE_GYROSCOPE);
-        SensorEventListener grrplistener = new SensorEventListener() {
-            @Override
-            public void onSensorChanged(SensorEvent event) {
-                if (event.values[1] < 0) {
-                    Intent intent=new Intent(CartActivity.this,Landind_Activity.class);
-                    startActivity(intent);
-                    finish();
-                } else if (event.values[1] > 0) {
-                   // Intent intent=new Intent(CartActivity.this,.class);
-                    //startActivity(intent);
-                }
-            };
-
-            @Override
-            public void onAccuracyChanged(Sensor sensor, int accuracy) {
-
-            }
-        };
-        if (sensor!=null)
-        {
-            sensorManager.registerListener(grrplistener,sensor,SensorManager.SENSOR_DELAY_NORMAL);
-        }
-        else
-        {
-            Toast.makeText(getApplicationContext(), "No sensor found", Toast.LENGTH_SHORT).show();
-        }
 
 
     }
