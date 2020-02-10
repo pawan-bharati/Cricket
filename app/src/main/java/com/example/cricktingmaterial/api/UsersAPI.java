@@ -4,6 +4,7 @@ import com.example.cricktingmaterial.model.Cart;
 import com.example.cricktingmaterial.model.Order;
 import com.example.cricktingmaterial.model.Users;
 import com.example.cricktingmaterial.model.UsersCUD;
+import com.example.cricktingmaterial.serverresponse.CartResponse;
 import com.example.cricktingmaterial.serverresponse.SignUpResponse;
 
 
@@ -36,5 +37,7 @@ public interface UsersAPI {
     @POST("cart/addcart")
     Call<Void> addcart(@Body Cart cart);
 
-
+    @FormUrlEncoded
+    @POST("cart/checkcart")
+    Call<CartResponse> checkcart(@Field("productid") String productid, @Field("userid") String userid);
 }

@@ -2,8 +2,10 @@ package com.example.cricktingmaterial;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -22,6 +24,7 @@ public class MyDetailActivity extends AppCompatActivity {
     Users users;
     private EditText etfname, etlname, etemail, etpassword, etaddress, etnumber;
     private TextView txtshop;
+    TextView tvLoginNow1;
     public String userID="";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +37,16 @@ public class MyDetailActivity extends AppCompatActivity {
         etpassword = findViewById(R.id.etPassword1);
         etaddress = findViewById(R.id.etAddress1);
         etnumber = findViewById(R.id.etPhone1);
+        tvLoginNow1=findViewById(R.id.tvLoginNow1);
+
+
+        tvLoginNow1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(MyDetailActivity.this,Landind_Activity.class);
+                startActivity(intent);
+            }
+        });
 
        // txtshop=findViewById(R.id.txt);
         loadCurrentUser();
@@ -53,9 +66,9 @@ public class MyDetailActivity extends AppCompatActivity {
                 users = response.body();
                 userID=response.body().get_id();
 
-                // set id and pass value in ProductActivity
-//                ProductdetailActivity.id = response.body().get_id();
-//                CartActivity.id=response.body().get_id();
+//                 set id and pass value in ProductActivity
+                ProductDetail_Activity.id = response.body().get_id();
+                CartActivity.id=response.body().get_id();
 
 //                Toast.makeText(MainActivity.this, "ID IS"+response.body().get_id(), Toast.LENGTH_SHORT).show();
                 etfname.setText(response.body().getFname());

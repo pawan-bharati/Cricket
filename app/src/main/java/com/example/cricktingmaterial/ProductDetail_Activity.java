@@ -15,9 +15,20 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.cricktingmaterial.api.UsersAPI;
+import com.example.cricktingmaterial.loginhandler.CartHandler;
+import com.example.cricktingmaterial.model.Cart;
 import com.example.cricktingmaterial.url.Url;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.android.material.snackbar.Snackbar;
 import com.squareup.picasso.Picasso;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
 
 public class ProductDetail_Activity extends AppCompatActivity {
     ImageView dimgview;
@@ -26,6 +37,10 @@ public class ProductDetail_Activity extends AppCompatActivity {
     Context mcontext;
     Button buttonCart;
     private SensorManager sensorManager;
+    public static String id = null;
+    String product_id = "";
+    private FloatingActionButton fab;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -50,6 +65,7 @@ public class ProductDetail_Activity extends AppCompatActivity {
                     .centerCrop()
                     .into(dimgview);
 
+            product_id = bundle.getString("_id");
             tvdname.setText(bundle.getString("name"));
             tvdprice.setText("Rs: " + bundle.getString("price"));
             tvddesc.setText(bundle.getString("description"));
@@ -69,8 +85,73 @@ buy.setOnClickListener(new View.OnClickListener() {
     }
 });
         }
+        buttonCart.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String _userid = id;
+                String _productid = product_id;
+                CartHandler cartBll = new CartHandler();
+                if (cartBll.checkcart(_userid, _productid)) {
+                    Register();
+                    Snackbar.make(view, "Added to Cart", Snackbar.LENGTH_LONG)
+                            .setAction("Action", null).show();
+
+                } else {
+                    fab.setEnabled(false);
+                    Snackbar.make(view, "Already Added! Check cart", Snackbar.LENGTH_LONG)
+                            .setAction("Action", null).show();
+
+                }
+            }
+        });
+        fab = (FloatingActionButton) findViewById(R.id.fab);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String _userid = id;
+                String _productid = product_id;
+                CartHandler cartBll = new CartHandler();
+                if (cartBll.checkcart(_userid, _productid)) {
+                    Register();
+                    Snackbar.make(view, "Added to Cart", Snackbar.LENGTH_LONG)
+                            .setAction("Action", null).show();
+
+                } else {
+                    fab.setEnabled(false);
+                    Snackbar.make(view, "Already Added! Check cart", Snackbar.LENGTH_LONG)
+                            .setAction("Action", null).show();
+                }
+            }
+        });
 
 
+    }
+    private void Register() {
+
+        String _userid = id;
+        String _productid = product_id;
+        String name = tvdname.getText().toString();
+        String price = tvdprice.getText().toString();
+        String specification = tvspecification.getText().toString();
+        String description = tvddesc.getText().toString();
+        Cart cart = new Cart(_userid, _productid, name, price, description, specification);
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl(Url.base_url)
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
+
+        UsersAPI employeeApi = retrofit.create(UsersAPI.class);
+        Call<Void> voidCall = employeeApi.addcart(cart);
+        voidCall.enqueue(new Callback<Void>() {
+            @Override
+            public void onResponse(Call<Void> call, Response<Void> response) {
+                Toast.makeText(getApplicationContext(), "You have added to cart registered", Toast.LENGTH_SHORT).show();
+            }
+            @Override
+            public void onFailure(Call<Void> call, Throwable t) {
+                Toast.makeText(getApplicationContext(), "Error" + t.getLocalizedMessage(), Toast.LENGTH_SHORT).show();
+            }
+        });
     }
     private void proximity() {
         sensorManager = (SensorManager) getSystemService(SENSOR_SERVICE);

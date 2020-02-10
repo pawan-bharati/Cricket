@@ -3,7 +3,28 @@ package com.example.cricktingmaterial.model;
 import java.io.Serializable;
 
 public class Products implements Serializable {
-    private  String name,price,image,description;
+    private  String name;
+    private String price;
+    private String image;
+    private String description;
+
+    public String get_id() {
+        return _id;
+    }
+
+    public void set_id(String _id) {
+        this._id = _id;
+    }
+
+    public Products(String name, String price, String image, String description, String _id) {
+        this.name = name;
+        this.price = price;
+        this.image = image;
+        this.description = description;
+        this._id = _id;
+    }
+
+    private String _id;
 
     public String getName() {
         return name;
@@ -37,10 +58,5 @@ public class Products implements Serializable {
         this.description = description;
     }
 
-    public Products(String name, String price, String image, String description) {
-        this.name = name;
-        this.price = price;
-        this.image = image;
-        this.description = description;
-    }
+
 }
