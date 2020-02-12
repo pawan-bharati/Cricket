@@ -16,6 +16,8 @@ import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
+import static androidx.navigation.ui.NavigationUI.setupWithNavController;
+
 public class Landind_Activity extends AppCompatActivity {
     private SensorManager sensorManager;
     @Override
@@ -30,7 +32,7 @@ public class Landind_Activity extends AppCompatActivity {
                 .build();
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
        NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
-        NavigationUI.setupWithNavController(navView, navController);
+        setupWithNavController(navView, navController);
         sensorManager=(SensorManager) getSystemService(SENSOR_SERVICE);
         final Sensor sensor=sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
         SensorEventListener sel=new SensorEventListener() {
